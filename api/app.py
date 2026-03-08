@@ -41,7 +41,7 @@ def is_origin_allowed(origin: str) -> bool:
             # Extract app name from configured origin like "https://a-inalyst.vercel.app"
             app_name = configured.split('.')[0].split('//')[-1]
             # Check if origin matches pattern: https://a-inalyst-*.vercel.app
-            vercel_pattern = f"https://{app_name}.*\.vercel\.app"
+            vercel_pattern = rf"https://{app_name}.*\.vercel\.app"
             if re.match(vercel_pattern, origin):
                 return True
     
